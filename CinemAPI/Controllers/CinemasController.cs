@@ -25,7 +25,7 @@ namespace CinemAPI.Controllers
         [HttpPost]
         public IHttpActionResult Index(CinemaCreationModel model)
         {
-            if (string.IsNullOrWhiteSpace(model.Name) || string.IsNullOrWhiteSpace(model.Address))
+            if (!this.ModelState.IsValid)
             {
                 return BadRequest("Invalid cinema name or address");
             }

@@ -19,6 +19,11 @@ namespace CinemAPI.Controllers
         [HttpPost]
         public IHttpActionResult Index(RoomCreationModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return BadRequest("Invalid data provided");
+            }
+
             IRoom room = roomRepo.GetByCinemaAndNumber(model.CinemaId, model.Number);
 
             if (room == null)
