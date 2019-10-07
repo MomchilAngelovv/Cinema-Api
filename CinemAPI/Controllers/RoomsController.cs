@@ -6,11 +6,11 @@ using System.Web.Http;
 
 namespace CinemAPI.Controllers
 {
-    public class RoomController : ApiController
+    public class RoomsController : ApiController
     {
         private readonly IRoomRepository roomRepo;
 
-        public RoomController(IRoomRepository roomRepo)
+        public RoomsController(IRoomRepository roomRepo)
         {
             this.roomRepo = roomRepo;
         }

@@ -6,11 +6,11 @@ using System.Web.Http;
 
 namespace CinemAPI.Controllers
 {
-    public class MovieController : ApiController
+    public class MoviesController : ApiController
     {
         private readonly IMovieRepository movieRepo;
 
-        public MovieController(IMovieRepository movieRepo)
+        public MoviesController(IMovieRepository movieRepo)
         {
             this.movieRepo = movieRepo;
         }

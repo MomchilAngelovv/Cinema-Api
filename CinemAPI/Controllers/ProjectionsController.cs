@@ -6,11 +6,11 @@ using System.Web.Http;
 
 namespace CinemAPI.Controllers
 {
-    public class ProjectionController : ApiController
+    public class ProjectionsController : ApiController
     {
         private readonly INewProjection newProj;
 
-        public ProjectionController(INewProjection newProj)
+        public ProjectionsController(INewProjection newProj)
         {
             this.newProj = newProj;
         }
