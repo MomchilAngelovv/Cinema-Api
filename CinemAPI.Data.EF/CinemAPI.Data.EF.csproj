@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201910071015533_Initial_Database_Create.Designer.cs">
       <DependentUpon>201910071015533_Initial_Database_Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910071108522_Added_AvailableSeatsCount_To_Projection_Table.cs" />
+    <Compile Include="Migrations\201910071108522_Added_AvailableSeatsCount_To_Projection_Table.Designer.cs">
+      <DependentUpon>201910071108522_Added_AvailableSeatsCount_To_Projection_Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelConfigurations\CinemaModelConfiguration.cs" />
     <Compile Include="IModelConfiguration.cs" />
     <Compile Include="ModelConfigurations\MovieModelConfiguration.cs" />
@@ -75,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910071015533_Initial_Database_Create.resx">
       <DependentUpon>201910071015533_Initial_Database_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910071108522_Added_AvailableSeatsCount_To_Projection_Table.resx">
+      <DependentUpon>201910071108522_Added_AvailableSeatsCount_To_Projection_Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

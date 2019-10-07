@@ -2,6 +2,7 @@
 using CinemAPI.Models;
 using CinemAPI.Models.Contracts.Movie;
 using CinemAPI.Models.Input.Movie;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace CinemAPI.Controllers
@@ -14,6 +15,7 @@ namespace CinemAPI.Controllers
         {
             this.movieRepo = movieRepo;
         }
+
 
         [HttpPost]
         public IHttpActionResult Index(MovieCreationModel model)

@@ -1,14 +1,11 @@
 ﻿using CinemAPI.Models.Contracts.Projection;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CinemAPI.Models
 {
     public class Projection : IProjection, IProjectionCreation
     {
-        public Projection()
-        {
-        }
-
         public Projection(int movieId, int roomId, DateTime startdate)
         {
             this.MovieId = movieId;
@@ -27,5 +24,7 @@ namespace CinemAPI.Models
         public virtual Movie Movie { get; set; }
 
         public DateTime StartDate { get; set; }
+
+        public int AvailableSeatsCount { get; set; }
     }
 }
