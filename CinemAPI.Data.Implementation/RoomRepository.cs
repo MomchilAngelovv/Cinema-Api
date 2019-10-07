@@ -1,6 +1,7 @@
 ﻿using CinemAPI.Data.EF;
 using CinemAPI.Models;
 using CinemAPI.Models.Contracts.Room;
+using System;
 using System.Linq;
 
 namespace CinemAPI.Data.Implementation
@@ -27,6 +28,11 @@ namespace CinemAPI.Data.Implementation
 
         public void Insert(IRoomCreation room)
         {
+            if (db.Cinemas.Any(c => c.Id != room.CinemaId))
+            {
+                throw new ArgumentException("Invalid cinemaId");
+            }
+
             Room newRoom = new Room(room.Number, room.SeatsPerRow, room.Rows, room.CinemaId);
 
             db.Rooms.Add(newRoom);

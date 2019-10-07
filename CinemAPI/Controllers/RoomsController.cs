@@ -2,6 +2,7 @@
 using CinemAPI.Models;
 using CinemAPI.Models.Contracts.Room;
 using CinemAPI.Models.Input.Room;
+using System;
 using System.Web.Http;
 
 namespace CinemAPI.Controllers
@@ -22,7 +23,15 @@ namespace CinemAPI.Controllers
 
             if (room == null)
             {
-                roomRepo.Insert(new Room(model.Number, model.SeatsPerRow, model.Rows, model.CinemaId));
+                try
+                {
+                    roomRepo.Insert(new Room(model.Number, model.SeatsPerRow, model.Rows, model.CinemaId));
+
+                }
+                catch (ArgumentException)
+                {
+                    return BadRequest("Cinema does not exists");
+                }
 
                 return Ok();
             }

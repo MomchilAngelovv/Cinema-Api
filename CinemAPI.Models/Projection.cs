@@ -6,6 +6,11 @@ namespace CinemAPI.Models
 {
     public class Projection : IProjection, IProjectionCreation
     {
+        public Projection()
+        {
+
+        }
+
         public Projection(int movieId, int roomId, DateTime startdate)
         {
             this.MovieId = movieId;
